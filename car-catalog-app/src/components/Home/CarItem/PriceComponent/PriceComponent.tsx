@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 
 type PriceComponentPropsType = {
-   price: number
+   price: any
 }
 
 export function PriceComponent(props: PriceComponentPropsType) {

@@ -1,6 +1,6 @@
 
 
-export const cars = [
+export const carsData = [
    {
       id: 1,
       name: 'BMW X7',

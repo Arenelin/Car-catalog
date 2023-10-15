@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import logo from './logo.svg';
 import { CarItem } from '../CarItem/CarItem';
-import { cars } from '../../../dataBase/data';
+import { carsData } from '../../../dataBase/data';
 import { HeaderComponent } from './Header';
+import { CreateCarForm } from '../CreateCarForm/CreateCarForm';
+
+export function Home() {
 
 
-function Home() {
+  const [cars, setCar] = useState(carsData)
+
+
   return (
     <div className='wrapper'>
       <div className='main'>
-        <HeaderComponent/>
-      {cars ? (cars.map(car => <CarItem car={car} key={car.id}/>))
-        : <p>There are no car</p>}
+        <HeaderComponent />
+        <CreateCarForm setCar={setCar} />
+        {cars ? (cars.map(car => <CarItem car={car} key={car.id} />))
+          : <p>There are no car</p>}
       </div>
     </div>
-    
+
   )
 }
 
-export default Home;
+
